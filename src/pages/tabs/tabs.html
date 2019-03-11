@@ -1,0 +1,20 @@
+<!--
+  Generated template for the TabsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>tabs</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+<ion-content padding>
+  <ion-tabs>
+    <ion-tab [root]="tab1page" [tabsHideOnSubPages]="true" [rootParams]='tab3params' tabTitle='Inbox' tabIcon='mail'></ion-tab>	
+    <ion-tab [root]="tab2page" [tabsHideOnSubPages]="true" [rootParams]='tab3params' tabTitle='Channels' tabIcon='people'></ion-tab>	
+    <ion-tab [root]="tab3page" [tabsHideOnSubPages]="true" [rootParams]='tab3params' tabTitle='Profile' tabTitle='Profile' tabIcon='person'></ion-tab>	
+  </ion-tabs>
+</ion-content>

@@ -1,0 +1,70 @@
+<!--
+  Generated template for the MessagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+  <ion-navbar>
+    <ion-title>{{friendprofile?.firstName}} {{friendprofile?.lastName}}</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+  
+  <!-- Hard coding (Mockup data) -->
+    <!-- <ion-item>
+      <ion-avatar item-left>
+          <img src="assets/imgs/avatar.jpg">
+      </ion-avatar>
+      <h2>Jieun Kim</h2>
+      <p>hello!!</p>
+    </ion-item> 
+  
+    <ion-item class="chat-right">
+      <ion-avatar item-right>
+          <img src="assets/imgs/avatar.jpg">
+      </ion-avatar>
+      <h2>Bogum Park</h2>
+      <p>How are you?</p>
+    </ion-item>  -->
+    
+  <ion-content padding>
+    <ng-container *ngFor='let msg of messageList|async' >
+      <ng-container *ngIf="myprofile.firstName == msg.firstName; else LeftFriend">
+          <ion-item class="chat-right">
+              <ion-avatar item-right>
+                  <img src='../assets/imgs/avatar.jpg'>
+              </ion-avatar>
+              <h2> {{msg.name}} </h2>
+              <p> {{msg.content}} </p>
+          </ion-item>
+      </ng-container>
+      <ng-template #LeftFriend>
+          <ion-item class="chat-left">
+              <ion-avatar item-left>
+                  <img src='../assets/imgs/avatar.jpg'>
+              </ion-avatar>
+              <h2> {{msg.name}} </h2>
+              <p> {{msg.content}} </p>
+          </ion-item>
+      </ng-template>
+    </ng-container>
+  </ion-content>
+  
+  
+  
+  <ion-footer>
+    <ion-toolbar>
+      <ion-row>
+        <ion-col col-9>
+            <ion-textarea [(ngModel)]="content" placeholder="Enter message"></ion-textarea>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button clear (click)="sendMessage()">Submit</button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-footer>
+  
+  
