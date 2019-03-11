@@ -1,0 +1,21 @@
+
+  hello {{who.toUpperCase()}}! <br>
+  {{12*20}} <br>
+  <!-- pipe (from unix) -->
+  {{who | uppercase}} <br>
+  <button (click)="sayHello()">Click me!</button> <br/>
+  <input type="text" (keyup)="log($event)"/><br>
+  
+  <p *ngIf="!who else showwho"> Please enter text </p><br>
+  <input type="text" [(ngModel)]="who"/><br>
+  <ng-template #showwho><p>You are {{who}}</p></ng-template>
+
+  <ul>
+    <li *ngFor="let name of presidents">Hello {{name}}</li>
+  </ul>
+
+  <br/>
+  My favorite fruit is {{fruits}}<br>
+
+  {{presidents[0].name}}<br>
+  {{presidents|json}}<br>
