@@ -1,0 +1,26 @@
+<!--
+  Generated template for the AddItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Update Shopping List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Item Name</ion-label>
+    <ion-input type='text' [(ngModel)]="item.name" ></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Amount</ion-label>
+      <ion-input type='number' [(ngModel)]="item.amount"></ion-input>
+  </ion-item>
+  <button ion-button block (click)="editClicked()">Edit</button>
+</ion-content>
