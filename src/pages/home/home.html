@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button bloc (click)="nav2About()">Go to About</button>
+
+
+  <!--movies 가 null 이 아니어야 출력-->
+  <p *ngIf="movies">{{movies[0].release_year}}</p>
+
+</ion-content>
